@@ -15,9 +15,22 @@ export class Board extends React.Component<BoardProps, BoardState> {
         let squares: Array<SquareProps> = [];
 
         // init 64 squares
-        for (let x: number = 0; x < 64; x++) {
+        let isWhite: boolean = true;
+        let color: string = 'white';
+        for (let x: number = 1; x <= 64; x++) {
+
+            if (isWhite === false) {
+                color = 'black';
+            } else {
+                color = 'white';
+            }
+
+            if ( x % 8) {
+                isWhite = !isWhite;
+            }
+
             squares.push({
-                color: x % 2 ? 'white' : 'black',
+                color: color,
                 id: x + 1
             });
         }
