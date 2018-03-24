@@ -17,10 +17,6 @@ export enum PieceType {
 export interface PieceProps {
     color: PieceColor;
     type: PieceType;
-    position: {
-        x: number;
-        y: number;
-    };
 }
 
 export interface PieceState {

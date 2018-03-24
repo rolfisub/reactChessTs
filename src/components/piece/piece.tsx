@@ -5,19 +5,7 @@ export class Piece extends React.Component<PieceProps, PieceState> {
     constructor(props: PieceProps, state: PieceState) {
         super(props, state);
         this.state = state;
-
-        this.getPositionStyleFromProps = this.getPositionStyleFromProps.bind(this);
         this.getUrlImageStringFromProps = this.getUrlImageStringFromProps.bind(this);
-    }
-
-    getPositionStyleFromProps(currentStyle: PieceStyle): PieceStyle {
-        let pieceStyle: PieceStyle = currentStyle;
-        let offset: number = 50;
-        pieceStyle.left = 0;
-        pieceStyle.top = 0;
-        pieceStyle.left += (offset * this.props.position.x);
-        pieceStyle.top += (offset * this.props.position.y);
-        return pieceStyle;
     }
 
     getUrlImageStringFromProps(): string {
@@ -76,13 +64,13 @@ export class Piece extends React.Component<PieceProps, PieceState> {
         // init empty
         let pieceStyle: PieceStyle = {
             position: 'relative',
+            float: 'left',
             zIndex: 1000,
             width: 50,
             height: 50
         };
 
         pieceStyle.background = this.getUrlImageStringFromProps();
-        pieceStyle = this.getPositionStyleFromProps(pieceStyle);
 
         this.setState({
             styles: pieceStyle

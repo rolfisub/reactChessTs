@@ -18,7 +18,7 @@ export class Square extends React.Component<SquareProps, SquareStyle> {
 
     render() {
         return (
-            <div style={this.state} />
+            <div style={this.state}>{this.props.children}</div>
         );
     }
 }

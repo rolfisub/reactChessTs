@@ -22,7 +22,7 @@ export class Board extends React.Component<BoardProps, BoardState> {
         for (let x: number = 1; x <= 64; x++) {
 
             if (isWhite === false) {
-                color = 'black';
+                color = 'grey';
             } else {
                 color = 'white';
             }
@@ -52,30 +52,29 @@ export class Board extends React.Component<BoardProps, BoardState> {
             <div
                 style={this.state.style}
             >
-
-                <Piece color={PieceColor.Black} type={PieceType.King} position={{x: 0, y: 0}} />
-                <Piece color={PieceColor.Black} type={PieceType.Queen} position={{x: 0, y: 0}} />
-                <Piece color={PieceColor.Black} type={PieceType.Bishop} position={{x: 0, y: 0}} />
-                <Piece color={PieceColor.Black} type={PieceType.Knight} position={{x: 0, y: 0}} />
-                <Piece color={PieceColor.Black} type={PieceType.Rook} position={{x: 0, y: 0}} />
-                <Piece color={PieceColor.Black} type={PieceType.Pawn} position={{x: 0, y: 0}} />
-
-                <Piece color={PieceColor.White} type={PieceType.King} position={{x: 0, y: 0}} />
-                <Piece color={PieceColor.White} type={PieceType.Queen} position={{x: 0, y: 0}} />
-                <Piece color={PieceColor.White} type={PieceType.Bishop} position={{x: 0, y: 0}} />
-                <Piece color={PieceColor.White} type={PieceType.Knight} position={{x: 0, y: 0}} />
-                <Piece color={PieceColor.White} type={PieceType.Rook} position={{x: 0, y: 0}} />
-                <Piece color={PieceColor.White} type={PieceType.Pawn} position={{x: 0, y: 0}} />
-
                 {
                     this.state.squares ?
                         this.state.squares.map((sq, index) => {
                             return (
-                                <Square {...sq} key={index.toString()}/>
+                                <Square {...sq} key={index.toString()}>
+                                    <Piece color={PieceColor.Black} type={PieceType.Rook}/>
+                                </Square>
                             );
                         }) : []
                 }
+                <Piece color={PieceColor.Black} type={PieceType.King} />
+                <Piece color={PieceColor.Black} type={PieceType.Queen} />
+                <Piece color={PieceColor.Black} type={PieceType.Bishop} />
+                <Piece color={PieceColor.Black} type={PieceType.Knight} />
+                <Piece color={PieceColor.Black} type={PieceType.Rook} />
+                <Piece color={PieceColor.Black} type={PieceType.Pawn} />
 
+                <Piece color={PieceColor.White} type={PieceType.King} />
+                <Piece color={PieceColor.White} type={PieceType.Queen} />
+                <Piece color={PieceColor.White} type={PieceType.Bishop} />
+                <Piece color={PieceColor.White} type={PieceType.Knight} />
+                <Piece color={PieceColor.White} type={PieceType.Rook} />
+                <Piece color={PieceColor.White} type={PieceType.Pawn} />
             </div>
         );
     }
