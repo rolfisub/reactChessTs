@@ -34,11 +34,10 @@ export interface Piece {
 }
 
 export interface Square {
-    piece: Piece,
-    color: Color
+    piece: Piece;
+    color: Color;
 }
 
 export interface ChessBoard {
-    squares: Array<Square>
+    squares: Array<Square>;
 }
-

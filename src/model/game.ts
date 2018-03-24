@@ -29,7 +29,7 @@ export class ChessGame {
         };
         for (let x: number = 1; x <= 64; x++) {
 
-            color = isWhite? Color.White : Color.Black;
+            color = isWhite ? Color.White : Color.Black;
 
             let sqr: Square = {
                 color: color,
@@ -55,8 +55,4 @@ export class ChessGame {
     public getBoard(): ChessBoard {
         return this.board;
     }
-
-
-
-
 }
