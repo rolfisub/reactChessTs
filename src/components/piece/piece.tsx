@@ -67,7 +67,7 @@ export class Piece extends React.Component<PieceProps, PieceState> {
             }
         }
 
-        let url: string = 'url(/media/chess_pieces.png) ' + topImg + ' ' + leftImg;
+        let url: string = 'url(media/chess_pieces.png) -' + leftImg + 'px ' + topImg + 'px';
         return url;
     }
 
@@ -75,9 +75,10 @@ export class Piece extends React.Component<PieceProps, PieceState> {
 
         // init empty
         let pieceStyle: PieceStyle = {
-            position: 'absolute',
+            position: 'relative',
             zIndex: 1000,
-            backgroundColor: 'red'
+            width: 50,
+            height: 50
         };
 
         pieceStyle.background = this.getUrlImageStringFromProps();

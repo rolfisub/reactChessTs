@@ -52,6 +52,9 @@ export class Board extends React.Component<BoardProps, BoardState> {
             <div
                 style={this.state.style}
             >
+                <Piece color={PieceColor.Black} type={PieceType.Queen} position={{x: 0, y: 0}} />
+                <Piece color={PieceColor.White} type={PieceType.Rook} position={{x: 0, y: 0}} />
+                <Piece color={PieceColor.Black} type={PieceType.Pawn} position={{x: 0, y: 0}} />
                 {
                     this.state.squares ?
                         this.state.squares.map((sq, index) => {
@@ -60,7 +63,7 @@ export class Board extends React.Component<BoardProps, BoardState> {
                             );
                         }) : []
                 }
-                <Piece color={PieceColor.Black} type={PieceType.Queen} position={{x: 1, y: 1}} />
+
             </div>
         );
     }
