@@ -2,6 +2,8 @@ import * as React from 'react';
 import {BoardProps, BoardState} from "./types";
 import {SquareProps} from "../square/types";
 import {Square} from "../square/square";
+import {Piece} from "../piece/piece";
+import {PieceColor, PieceType} from "../piece/types";
 
 export class Board extends React.Component<BoardProps, BoardState> {
 
@@ -54,10 +56,11 @@ export class Board extends React.Component<BoardProps, BoardState> {
                     this.state.squares ?
                         this.state.squares.map((sq, index) => {
                             return (
-                                <Square id={sq.id} color={sq.color} key={index.toString()}/>
+                                <Square {...sq} key={index.toString()}/>
                             );
                         }) : []
                 }
+                <Piece color={PieceColor.Black} type={PieceType.Queen} position={{x: 1, y: 1}} />
             </div>
         );
     }
