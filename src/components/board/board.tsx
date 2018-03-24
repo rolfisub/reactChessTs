@@ -52,9 +52,21 @@ export class Board extends React.Component<BoardProps, BoardState> {
             <div
                 style={this.state.style}
             >
+
+                <Piece color={PieceColor.Black} type={PieceType.King} position={{x: 0, y: 0}} />
                 <Piece color={PieceColor.Black} type={PieceType.Queen} position={{x: 0, y: 0}} />
-                <Piece color={PieceColor.White} type={PieceType.Rook} position={{x: 0, y: 0}} />
+                <Piece color={PieceColor.Black} type={PieceType.Bishop} position={{x: 0, y: 0}} />
+                <Piece color={PieceColor.Black} type={PieceType.Knight} position={{x: 0, y: 0}} />
+                <Piece color={PieceColor.Black} type={PieceType.Rook} position={{x: 0, y: 0}} />
                 <Piece color={PieceColor.Black} type={PieceType.Pawn} position={{x: 0, y: 0}} />
+
+                <Piece color={PieceColor.White} type={PieceType.King} position={{x: 0, y: 0}} />
+                <Piece color={PieceColor.White} type={PieceType.Queen} position={{x: 0, y: 0}} />
+                <Piece color={PieceColor.White} type={PieceType.Bishop} position={{x: 0, y: 0}} />
+                <Piece color={PieceColor.White} type={PieceType.Knight} position={{x: 0, y: 0}} />
+                <Piece color={PieceColor.White} type={PieceType.Rook} position={{x: 0, y: 0}} />
+                <Piece color={PieceColor.White} type={PieceType.Pawn} position={{x: 0, y: 0}} />
+
                 {
                     this.state.squares ?
                         this.state.squares.map((sq, index) => {
