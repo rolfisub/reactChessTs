@@ -3,7 +3,7 @@ import {BoardProps, BoardState} from "./types";
 import {SquareProps} from "../square/types";
 import {Square} from "../square/square";
 import {Piece} from "../piece/piece";
-import {PieceColor, PieceType} from "../piece/types";
+import {Color, PieceType} from "../../model/types";
 
 export class Board extends React.Component<BoardProps, BoardState> {
 
@@ -57,24 +57,24 @@ export class Board extends React.Component<BoardProps, BoardState> {
                         this.state.squares.map((sq, index) => {
                             return (
                                 <Square {...sq} key={index.toString()}>
-                                    <Piece color={PieceColor.Black} type={PieceType.Rook}/>
+                                    <Piece color={Color.Black} type={PieceType.Rook}/>
                                 </Square>
                             );
                         }) : []
                 }
-                <Piece color={PieceColor.Black} type={PieceType.King} />
-                <Piece color={PieceColor.Black} type={PieceType.Queen} />
-                <Piece color={PieceColor.Black} type={PieceType.Bishop} />
-                <Piece color={PieceColor.Black} type={PieceType.Knight} />
-                <Piece color={PieceColor.Black} type={PieceType.Rook} />
-                <Piece color={PieceColor.Black} type={PieceType.Pawn} />
+                <Piece color={Color.Black} type={PieceType.King} />
+                <Piece color={Color.Black} type={PieceType.Queen} />
+                <Piece color={Color.Black} type={PieceType.Bishop} />
+                <Piece color={Color.Black} type={PieceType.Knight} />
+                <Piece color={Color.Black} type={PieceType.Rook} />
+                <Piece color={Color.Black} type={PieceType.Pawn} />
 
-                <Piece color={PieceColor.White} type={PieceType.King} />
-                <Piece color={PieceColor.White} type={PieceType.Queen} />
-                <Piece color={PieceColor.White} type={PieceType.Bishop} />
-                <Piece color={PieceColor.White} type={PieceType.Knight} />
-                <Piece color={PieceColor.White} type={PieceType.Rook} />
-                <Piece color={PieceColor.White} type={PieceType.Pawn} />
+                <Piece color={Color.White} type={PieceType.King} />
+                <Piece color={Color.White} type={PieceType.Queen} />
+                <Piece color={Color.White} type={PieceType.Bishop} />
+                <Piece color={Color.White} type={PieceType.Knight} />
+                <Piece color={Color.White} type={PieceType.Rook} />
+                <Piece color={Color.White} type={PieceType.Pawn} />
             </div>
         );
     }

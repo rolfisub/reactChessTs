@@ -1,5 +1,6 @@
 import * as React from 'react';
-import {PieceColor, PieceProps, PieceState, PieceStyle, PieceType} from "./types";
+import {PieceProps, PieceState, PieceStyle} from "./types";
+import {Color, PieceType} from "../../model/types";
 
 export class Piece extends React.Component<PieceProps, PieceState> {
     constructor(props: PieceProps, state: PieceState) {
@@ -13,7 +14,7 @@ export class Piece extends React.Component<PieceProps, PieceState> {
         let leftImg: number;
         let offset: number = 50;
 
-        if (this.props.color === PieceColor.White) {
+        if (this.props.color === Color.White) {
             topImg = 0;
         } else {
             topImg = 0;
@@ -61,7 +62,7 @@ export class Piece extends React.Component<PieceProps, PieceState> {
 
     componentDidMount() {
 
-        // init empty
+        // init common properties
         let pieceStyle: PieceStyle = {
             position: 'relative',
             float: 'left',

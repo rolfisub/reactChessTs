@@ -1,28 +1,12 @@
 import {CSSProperties} from "react";
+import {Piece} from "../../model/types";
 
-export enum PieceColor {
-    White,
-    Black
+export interface PieceProps extends Piece {
+
 }
-
-export enum PieceType {
-    King,
-    Queen,
-    Bishop,
-    Knight,
-    Rook,
-    Pawn
-}
-
-export interface PieceProps {
-    color: PieceColor;
-    type: PieceType;
-}
-
-export interface PieceState {
-    styles: PieceStyle;
-}
-
 export interface PieceStyle extends CSSProperties {
 
+}
+export interface PieceState {
+    styles: PieceStyle;
 }
