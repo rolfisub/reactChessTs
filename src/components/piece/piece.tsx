@@ -14,6 +14,10 @@ export class Piece extends React.Component<PieceProps, PieceState> {
         let leftImg: number;
         let offset: number = 50;
 
+        if (this.props.color === Color.Null && this.props.type === PieceType.Null) {
+            return '';
+        }
+
         if (this.props.color === Color.White) {
             topImg = 0;
         } else {

@@ -11,7 +11,6 @@ export class ChessGame {
 
     constructor(options: ChessOptions) {
         this.options = options;
-        this.newGame();
     }
 
     protected getCleanBoard(): ChessBoard {
@@ -47,9 +46,5 @@ export class ChessGame {
 
     public newGame() {
         this.board = this.getCleanBoard();
-    }
-
-    public getBoard(): ChessBoard {
-        return this.board;
     }
 }

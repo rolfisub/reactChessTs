@@ -10,6 +10,7 @@ export class GameContainer extends React.Component<GameProps> {
 
     constructor(props: GameProps) {
         super(props);
+        this.props.game.newGame();
     }
 
     render() {

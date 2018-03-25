@@ -32,7 +32,7 @@ export class Board extends React.Component<BoardProps, BoardState> {
                         this.state.squares.map((sq, index) => {
                             return (
                                 <Square {...sq} key={index.toString()}>
-                                    <Piece color={Color.Black} type={PieceType.Rook}/>
+                                    <Piece color={sq.piece.color} type={sq.piece.type}/>
                                 </Square>
                             );
                         }) : []
