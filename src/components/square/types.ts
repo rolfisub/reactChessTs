@@ -1,10 +1,10 @@
 import {CSSProperties} from "react";
+import {Square} from "../../model/types";
 
-export interface SquareProps {
-    id: number;
-    color: string;
-}
+export interface SquareProps extends Square {}
 
-export interface SquareStyle extends CSSProperties {
+export interface SquareStyles extends CSSProperties {}
 
+export interface SquareState {
+    styles: SquareStyles;
 }

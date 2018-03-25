@@ -1,24 +1,33 @@
 import * as React from 'react';
-import {SquareProps, SquareStyle} from "./types";
+import {SquareProps, SquareState} from "./types";
+import {Color} from "../../model/types";
 
-export class Square extends React.Component<SquareProps, SquareStyle> {
-    constructor(props: SquareProps, state: SquareStyle) {
+export class Square extends React.Component<SquareProps, SquareState> {
+    constructor(props: SquareProps, state: SquareState) {
         super(props);
         this.state = state;
     }
 
     componentDidMount() {
+
+        let color: string = 'white';
+        if (this.props.color === Color.Black) {
+           color = 'grey';
+        }
+
         this.setState({
-            backgroundColor: this.props.color,
-            height: 50,
-            width: 50,
-            float: 'left'
+            styles: {
+                backgroundColor: color,
+                height: 50,
+                width: 50,
+                float: 'left'
+            }
         });
     }
 
     render() {
         return (
-            <div style={this.state}>{this.props.children}</div>
+            <div style={this.state.styles}>{this.props.children}</div>
         );
     }
 }

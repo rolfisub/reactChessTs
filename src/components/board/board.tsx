@@ -1,6 +1,5 @@
 import * as React from 'react';
 import {BoardProps, BoardState} from "./types";
-import {SquareProps} from "../square/types";
 import {Square} from "../square/square";
 import {Piece} from "../piece/piece";
 import {Color, PieceType} from "../../model/types";
@@ -13,44 +12,20 @@ export class Board extends React.Component<BoardProps, BoardState> {
     }
 
     componentDidMount() {
-
-        let squares: Array<SquareProps> = [];
-
-        // init 64 squares
-        let isWhite: boolean = true;
-        let color: string = 'white';
-        for (let x: number = 1; x <= 64; x++) {
-
-            if (isWhite === false) {
-                color = 'grey';
-            } else {
-                color = 'white';
-            }
-
-            if ( x % 8) {
-                isWhite = !isWhite;
-            }
-
-            squares.push({
-                color: color,
-                id: x + 1
-            });
-        }
-
         this.setState({
-            style: {
-                width: this.props.width,
-                height: this.props.height,
+            styles: {
+                width: 400,
+                height: 400,
                 border: '1px solid black'
             },
-            squares: squares
+            squares: this.props.squares
         });
     }
 
     render() {
         return (
             <div
-                style={this.state.style}
+                style={this.state.styles}
             >
                 {
                     this.state.squares ?

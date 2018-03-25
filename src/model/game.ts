@@ -7,11 +7,11 @@ interface ChessOptions {
 export class ChessGame {
 
     protected options: ChessOptions;
-    protected board: ChessBoard;
+    public board: ChessBoard;
 
     constructor(options: ChessOptions) {
         this.options = options;
-        this.getCleanBoard = this.getCleanBoard.bind(this);
+        this.newGame();
     }
 
     protected getCleanBoard(): ChessBoard {
@@ -28,7 +28,6 @@ export class ChessGame {
             type: PieceType.Null
         };
         for (let x: number = 1; x <= 64; x++) {
-
             color = isWhite ? Color.White : Color.Black;
 
             let sqr: Square = {
@@ -41,7 +40,6 @@ export class ChessGame {
                 isWhite = !isWhite;
             }
 
-            isWhite = !isWhite;
             newBoard.squares.push(sqr);
         }
         return newBoard;
@@ -49,7 +47,6 @@ export class ChessGame {
 
     public newGame() {
         this.board = this.getCleanBoard();
-
     }
 
     public getBoard(): ChessBoard {

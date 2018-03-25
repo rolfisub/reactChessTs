@@ -1,16 +1,14 @@
-import {SquareProps} from "../square/types";
+import {CSSProperties} from "react";
+import {ChessBoard} from "../../model/types";
 
-export interface BoardProps {
+export interface BoardProps extends ChessBoard {
     id: number;
-    width: number;
-    height: number;
 }
 
-export interface BoardState {
-    style: {
-        border: string;
-        width: number;
-        height: number;
-    };
-    squares: Array<SquareProps>;
+export interface BoardStyle extends CSSProperties {
+
+}
+
+export interface BoardState extends ChessBoard {
+    styles: BoardStyle;
 }
